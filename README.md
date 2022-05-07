@@ -34,7 +34,16 @@ El proyecto back tiene un import.sql que al arrancar la Api (spring.jpa.hibernat
 - JUnit
 - Mockito
 - Swagger
-- 
+
+## _Se cumplió con_:
+- Buenas prácticas de programación
+- Manejo de excepciones
+- Pruebas de unidad 
+- Manejo de DTO’S y entidades
+- Manejo de API’S y controladores
+- Estructuración de paquetes y capas
+- Inyección de dependencias
+- Normalización de base de datos
 
 
 ## Postdata:
