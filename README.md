@@ -13,6 +13,8 @@ Para tener control sobre las actualizaciones de las mercancias, se hizo uso de u
 
 El proyecto back tiene un import.sql que al arrancar la Api (spring.jpa.hibernate.ddl-auto=create), crea todas las tablas en la BD y pobla con datos de mercancía, cargo y usuario, para hacer pruebas.
 
+Las imágenes sobre la funcionalidad del software se encuentran en _**[ImagenesFuncionamientoFuncional](/ImagenesFuncionamientoFuncional/)**_
+
 ## _Pasos_: 
 - Clone el respositorio en su computador
 - Desde el editor de su preferencia, abra el proyecto angular-frontend (Para el desarrollo del mismo se hizo uso de Visual Studio Code) e inicielo con ng serve
