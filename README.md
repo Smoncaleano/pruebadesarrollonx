@@ -11,7 +11,7 @@ Para ver la Api documentacion, se debe tener la aplicación back-end corriendo y
 
 Para tener control sobre las actualizaciones de las mercancias, se hizo uso de un trigger afer update, dicho script se encuentra en /script_trigger
 
-El proyecto back tiene un import.sql que al arrancar la Api, create-drop las tablas en la base de datos y pobla con datos de mercancía, cargo y usuario, para hacer pruebas.
+El proyecto back tiene un import.sql que al arrancar la Api (spring.jpa.hibernate.ddl-auto=create), crea todas las tablas en la BD y pobla con datos de mercancía, cargo y usuario, para hacer pruebas.
 
 
 ## Se hizo uso de:
