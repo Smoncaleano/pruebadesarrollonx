@@ -28,7 +28,7 @@
       <div class="form-group row">
         <label for="apellido" class="col-form-label col-sm-2">Cantidad</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="mercancia.cantidad" name="cantidad" #cantidad="ngModel"> <!-- required -->
+          <input type="number" class="form-control" [(ngModel)]="mercancia.cantidad" name="cantidad" #cantidad="ngModel"> <!-- required -->
           <div class="alert alert-danger" *ngIf="cantidad.invalid && (cantidad.dirty || cantidad.touched)">
             <div *ngIf="cantidad.errors.required">
               Cantidad es requerida

@@ -101,8 +101,8 @@ export class MercanciasComponent implements OnInit {
           () => {
             this.mercancias = this.mercancias.filter(cli => cli !== mercancia)
             Swal(
-              'Cliente Eliminado!',
-              `Cliente ${mercancia.nombre} eliminado con éxito.`,
+              'Mercancía Eliminada!',
+              `Mercancía ${mercancia.nombre} eliminado con éxito.`,
               'success'
             )
           }
