@@ -9,7 +9,7 @@ El front corre en http://localhost:4200/
 
 Para ver la Api documentacion, se debe tener la aplicación back-end corriendo y abrir http://localhost:8090/swagger-ui.html
 
-Para tener control sobre las actualizaciones de las mercancias, se hizo uso de un trigger afer update, dicho script se encuentra en /script_trigger
+Para tener control sobre las actualizaciones de las mercancias, se hizo uso de un trigger afer update, dicho script se encuentra en la carpeta _**/script_trigger **_
 
 El proyecto back tiene un import.sql que al arrancar la Api (spring.jpa.hibernate.ddl-auto=create), crea todas las tablas en la BD y pobla con datos de mercancía, cargo y usuario, para hacer pruebas.
 
@@ -27,3 +27,4 @@ El proyecto back tiene un import.sql que al arrancar la Api (spring.jpa.hibernat
 
 ## Postdata:
 
+En el archivo _**/spring-boot-backend-apirest/src/main/resources/application.properties**_ se encuentra la configuración para la conexión a la base de datos postgres, en postgresql://localhost:5432/postgres. El user es "postgres" y la contraseña es "123456".
