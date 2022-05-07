@@ -1,0 +1,66 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">Mercancías</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Listado de mercancías</h5>
+    <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/mercancias/MercanciaForm']">
+        Crear mercancía
+      </button>
+    </div>
+    <div class="my-2 text-left">
+      Buscar por nombre
+      <input id="name" [(ngModel)]="nameToFind"  type="text" />
+      <button class="btn btn-rounded btn-primary" type="button" (click)="findByName(nameToFind)" update="tabla">
+        Filtrar
+    </button>
+      <div class="my-2 text-left">
+        Buscar por usuario creador
+        <input id="user" [(ngModel)]="userToFind"  type="number" placeholder="id del user creador" />
+        <button class="btn btn-rounded btn-primary" type="button" (click)="findByUser(userToFind)" update="tabla">
+          Filtrar
+        </button>  
+    </div>
+    <div class="my-2 text-left">
+      Buscar por fecha
+      <input id="user" [(ngModel)]="dateToFind"  type="date" placeholder="id del user creador" />
+      <button class="btn btn-rounded btn-primary" type="button" (click)="findByDate(dateToFind)" update="tabla">
+        Filtrar
+      </button>  
+  </div>
+    
+    <div *ngIf="mercancias?.length == 0" class="alert alert-info">
+      No hay registros en la base de datos!
+    </div>
+    <table id="tabla" class="table table-bordered table-striped" *ngIf="mercancias?.length>0">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>nombre</th>
+          <th>cantidad</th>
+          <th>usuario</th>
+          <th>fecha</th>
+          <th>
+            editar
+          </th>
+          <th>eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mercancia of mercancias">
+          <td>{{mercancia.id}}</td>
+          <td>{{ mercancia.nombre}}</td>
+          <td>{{ mercancia.cantidad  }}</td>
+          <td>{{ mercancia.usuario.nombre }}</td>
+          <td>{{ mercancia.createAt | date:"EEEE dd, MMMM yyyy"}}</td>
+          <td>
+            <button type="button" name="editar" [routerLink]="['/mercancias/MercanciaForm', mercancia.id]" class="btn btn-primary btn-sm">editar</button>
+          </td>
+          <td>
+            <button type="button" name="eliminar" (click)='delete(mercancia)' class="btn btn-danger btn-sm">eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

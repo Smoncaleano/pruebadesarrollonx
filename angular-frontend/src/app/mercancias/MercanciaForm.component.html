@@ -1,0 +1,85 @@
+<ul class="alert alert-danger" *ngIf="errores?.length > 0">
+  <li *ngFor="let err of errores">
+    {{ err }}
+  </li>
+</ul>
+
+
+<div class="card bg-dark text-white">
+  <div class="card-header">{{ titulo }}</div>
+  <div class="card-body">
+
+    <form #mercanciaForm="ngForm">
+      <div class="form-group row">
+        <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="mercancia.nombre" name="nombre" #nombre="ngModel"> <!-- required minlength="4" -->
+          <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+            <div *ngIf="nombre.errors.required">
+              Nombre es requerido
+            </div>
+            <div *ngIf="nombre.errors.minlength">
+              Nombre debe tener al menos 4 caracteres
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="apellido" class="col-form-label col-sm-2">Cantidad</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="mercancia.cantidad" name="cantidad" #cantidad="ngModel"> <!-- required -->
+          <div class="alert alert-danger" *ngIf="cantidad.invalid && (cantidad.dirty || cantidad.touched)">
+            <div *ngIf="cantidad.errors.required">
+              Cantidad es requerida
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="email" class="col-form-label col-sm-2">Fecha creacion</label>
+        <div class="col-sm-6">
+          <input type="date" class="form-control" [(ngModel)]="mercancia.createAt" name="createAt" #createAt="ngModel"> <!-- required email -->
+          <div class="alert alert-danger" *ngIf="createAt.invalid && (createAt.dirty || createAt.touched)">
+            <div *ngIf="createAt.errors.required">
+              La fecha es requerida
+            </div>
+  
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="form-group row">
+        <label for="email" class="col-form-label col-sm-2">Usuario</label>
+        <div class="col-sm-6">
+          <select  class="form-control" [(ngModel)]="selectedUser"  name="usuario" #usuario="ngModel" required>
+            <option [value]="item.id" *ngFor="let item of usuarios">{{item.nombre}}</option>
+            </select>
+
+            <div class="alert alert-danger" *ngIf="usuario.invalid && (usuario.dirty || usuario.touched)">
+              <div *ngIf="usuario.errors.required">
+                El cargo es requerido
+              </div>
+              
+            </div>
+        </div>
+        
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!mercancia.id else elseBlock" [disabled]="!mercanciaForm.form.valid">Crear</button>
+
+          <ng-template #elseBlock>
+            <button class="btn btn-primary" role="button" (click)='update()' [disabled]="!mercanciaForm.form.valid">Editar</button>
+          </ng-template>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

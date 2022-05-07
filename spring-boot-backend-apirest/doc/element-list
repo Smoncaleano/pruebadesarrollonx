@@ -1,0 +1,7 @@
+com.nexxos.springboot.backend.apirest
+com.nexxos.springboot.backend.apirest.config
+com.nexxos.springboot.backend.apirest.controllers
+com.nexxos.springboot.backend.apirest.models.dao
+com.nexxos.springboot.backend.apirest.models.entity
+com.nexxos.springboot.backend.apirest.models.services
+com.nexxos.springboot.backend.apirest.services

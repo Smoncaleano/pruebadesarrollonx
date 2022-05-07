@@ -1,0 +1,2 @@
+import { Cargo } from './cargo';
+
