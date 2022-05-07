@@ -27,4 +27,4 @@ El proyecto back tiene un import.sql que al arrancar la Api (spring.jpa.hibernat
 
 ## Postdata:
 
-En el archivo _**/spring-boot-backend-apirest/src/main/resources/application.properties**_ se encuentra la configuración para la conexión a la base de datos postgres, en postgresql://localhost:5432/postgres. El user es "postgres" y la contraseña es "123456".
+En el archivo _**[a link](/spring-boot-backend-apirest/src/main/resources/application.properties)**_ se encuentra la configuración para la conexión a la base de datos postgres, en postgresql://localhost:5432/postgres. El user es "postgres" y la contraseña es "123456".
